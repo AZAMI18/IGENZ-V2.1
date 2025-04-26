@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Referral - IGENZ Miner</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      padding-bottom: 80px;
+    }
+
+    .ref-link {
+      background-color: #333;
+      padding: 12px;
+      border-radius: 10px;
+      margin: 20px 0;
+      word-break: break-word;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #00d09c;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00b88a;
+    }
+
+    /* Navbar styles */
+    .nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #1a1a2e;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 0;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+      border-top: 1px solid #333;
+      animation: slideUp 0.5s ease-in-out;
+    }
+
+    .nav button {
+      background: none;
+      color: #aaa;
+      border: none;
+      font-weight: bold;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .nav button:hover, .nav button.active {
+      color: #00d09c;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Undang Teman</h2>
+    <p>Dapatkan <strong>+100 IGENZ Poin</strong> setiap kali teman lo daftar!</p>
+    <div class="ref-link" id="refLink">https://t.me/IGENZMinerBot?start=ref123</div>
+    <button onclick="copyLink()">Copy Link</button>
+  </div>
+
+  <div class="nav">
+    <button class="active" onclick="location.href='referral.html'">Referral</button>
+    <button onclick="location.href='index.html'">Mining</button>
+    <button onclick="location.href='task.html'">Task</button>
+  </div>
+
+  <script>
+    function copyLink() {
+      const refLink = document.getElementById('refLink');
+      navigator.clipboard.writeText(refLink.textContent).then(() => {
+        alert('Link berhasil disalin!');
+      });
+    }
+  </script>
+</body>
+</html>
